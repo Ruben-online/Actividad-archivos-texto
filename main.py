@@ -5,7 +5,24 @@ def getConceptandDef():
     with open("Conceptos y definiciones.txt", 'a') as file:
         file.write(f"{concept}:{definition}\n")
 
+def showConcepts():
+    file = open("Conceptos y definiciones.txt", 'r')
+    content = file.read()
+    file.close()
 
+    if content:
+        print("\n-----Conceptos y definiciones almacenados-----")
+        print(content)
+    else:
+        print("No hay conceptos almacenados.")
+
+def showQuantity():
+    file = open("Conceptos y definiciones.txt", 'r')
+    content = file.read()
+    file.close()
+
+    words = content.split()
+    print(f"\nCantidad de palabras almacenadas: {len(words)}")
 
 while True:
     print("-----Menú principal-----")
@@ -20,10 +37,10 @@ while True:
         getConceptandDef()
 
     elif main_menu == 2:
-        pass
+        showConcepts()
 
     elif main_menu == 3:
-        pass
+        showQuantity()
 
     elif main_menu == 4:
         print("Saliendo del programa...")
